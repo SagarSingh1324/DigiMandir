@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888022171908",
+    "project_id": "digimandir-e1bf1",
+    "storage_bucket": "digimandir-e1bf1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888022171908:android:e1dbf7f83c50ec81621051",
+        "android_client_info": {
+          "package_name": "com.digimandir"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgZ_jTT9M1hmneTLUkYWQWDmLZAfw54_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
