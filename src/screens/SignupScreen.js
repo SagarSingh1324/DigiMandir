@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, TextInput, Switch, Alert} from 'react-native'
+import { Pressable, StyleSheet, Text, View, TextInput, Switch, Alert, ImageBackground,} from 'react-native'
 import React, { useState } from 'react'
 import auth from '@react-native-firebase/auth'
 import {useNavigation} from '@react-navigation/native';
@@ -41,8 +41,14 @@ export default function SignupScreen() {
   };
 
   return (
-    <View style={styles.body}>
-        <Text style={{fontSize:40, margin:15,}}>
+    <ImageBackground
+      source={require('../assets/Images/SignUpBgImage.png')}
+      resizeMode="stretch" 
+      style={styles.image} >
+
+      <View style={styles.body}>
+
+        <Text style={{fontSize:40, margin:15, marginTop:40, }}>
             Signup Screen
         </Text>
 
@@ -114,11 +120,18 @@ export default function SignupScreen() {
                 Already have an account? Log in
             </Text>
         </Pressable>
-    </View>
+      </View>
+    </ImageBackground> 
 )
 }
 
 const styles = StyleSheet.create({
+
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  
 
   body: {
       flex: 1,

@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, TextInput, Switch, Alert } from 'react-native'
+import { Pressable, StyleSheet, Text, View, TextInput, Switch, Alert, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 import {useNavigation, StackActions} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth'
@@ -44,9 +44,14 @@ export default function LoginScreen(){
   };
 
   return (
-    <View style={styles.body}>
+    <ImageBackground
+      source={require('../assets/Images/LogInBgImage.png')}
+      resizeMode="stretch" 
+      style={styles.image} >
 
-        <Text style={{fontSize:40, margin:15,}}>
+      <View style={styles.body}>
+
+        <Text style={{fontSize:40, margin:15, marginTop:40, }}>
             Login Screen
         </Text>
 
@@ -99,7 +104,7 @@ export default function LoginScreen(){
         <Pressable
           onPress={() => handleLogIn()}
           style={({ pressed }) => ({ alignItems:'center', margin: 10, paddingVertical:4, paddingHorizontal:5,
-                                     borderRadius: 5, backgroundColor: pressed ? '#ddd' : '#00FFFF' })}
+                                    borderRadius: 5, backgroundColor: pressed ? '#ddd' : '#00FFFF' })}
         >
             <Text style = {{fontSize: 20, color:'#000000'}}>
               Log In
@@ -111,20 +116,24 @@ export default function LoginScreen(){
             navigation.navigate('Signup');
           }}
             style={({ pressed }) => ({ margin: 10, paddingVertical:7, paddingHorizontal:4, 
-                                       borderRadius:5, backgroundColor: pressed ? '#ddd' : '#0f0' })}
+                                      borderRadius:5, backgroundColor: pressed ? '#ddd' : '#0f0' })}
         >
             <Text style={{color:'#000000', fontSize:14,}}>
                 Don't have an account? Sign up 
             </Text>
         </Pressable>
-        
       
-
-    </View>
+      </View>
+    </ImageBackground> 
 )
 }
 
 const styles = StyleSheet.create({
+
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 
   body: {
     flex: 1,

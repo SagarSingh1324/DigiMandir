@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View,} from 'react-native'
+import { Pressable, StyleSheet, Text, View, ImageBackground, } from 'react-native'
 import React, { useState } from 'react'
 import Auth from '@react-native-firebase/auth';
 import {useNavigation, StackActions} from '@react-navigation/native';
@@ -8,48 +8,51 @@ export default function HomeScreen() {
     const navigation = useNavigation();
 
   return (
-    <View style={styles.body}>
+    <ImageBackground 
+        source={require('../assets/Images/GaneshImage.png')}
+        resizeMode="cover" 
+        style={styles.image} >
 
-      <Text style={styles.text}>
-        Welcome to DigiMandir
-      </Text>
+        <View style={styles.body}>
 
-      <Text>Email: {Auth().currentUser.email}</Text>
-      <Text>UserID: {Auth().currentUser.uid} </Text>
+{/*             <Text>Email: {Auth().currentUser.email}</Text>
+            <Text>UserID: {Auth().currentUser.uid} </Text> */}
 
-      <Pressable
-            onPress={async () => {
-
-                await Auth().signOut();
-                navigation.dispatch(StackActions.replace('Login'));
-/*                 if(navigation.canGoBack())
-                {
-                    navigation.dispatch(StackActions.pop(1));
+            <Pressable
+                onPress={async () => {
+                    await Auth().signOut();
+                    navigation.dispatch(StackActions.replace('Login'));
                 }
-                } */
-            }
-            }
-            style={({ pressed }) => ({ margin: 10, paddingVertical:7, paddingHorizontal:4, 
-                                       borderRadius:5, backgroundColor: pressed ? '#ddd' : '#0f0' })}
-        >
-            <Text style={styles.text}>
-                Log Out
-            </Text>
-        </Pressable>
-
-    </View>
+                }
+                style={({ pressed }) => ({ margin: 10, paddingVertical:1, borderRadius:5,
+                                           backgroundColor: pressed ? '#ddd' : '#0f0' })}
+            >
+                <Text style={styles.text}>
+                    Log Out
+                </Text>
+            </Pressable>
+        </View>
+    </ImageBackground>
   )
 }
 
 const styles = StyleSheet.create({
-    body: {
+
+    image: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
     },
+
+    body: {
+        flex: 1,
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+    },
+
     text: {
         fontSize: 20,
         fontWeight: 'bold',
         margin: 10,
     },
-    })
+
+    });
