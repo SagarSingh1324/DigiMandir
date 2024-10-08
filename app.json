@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "DigiMandir",
-    "slug": "DigiMandir",
+    "slug": "digimandir",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -31,6 +31,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1f45c40c-aa3d-4cce-abbf-e7bdc837f4d5"
+      }
+    },
+    "owner": "yash_kumar1324"
   }
 }
