@@ -5,11 +5,11 @@ const ContentPage = () => {
   return (
     <View>
         <Text style={{fontSize:30}}>
-            welcome to setting page
+            welcome to Home  page
         </Text>
         <Pressable>
             <Text>
-                settings
+                HomePage
             </Text>
         </Pressable>
     </View>

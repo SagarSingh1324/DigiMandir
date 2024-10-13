@@ -12,7 +12,7 @@ return (
   
   <Pressable> 
            <Text>
-            Setting Page
+            Setting Page yash kumar
           </Text>
          </Pressable>
     </View>  

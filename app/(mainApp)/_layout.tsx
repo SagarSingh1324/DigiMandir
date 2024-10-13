@@ -6,6 +6,13 @@ export default function mainAppLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer>
 
+      <Drawer.Screen
+          name="Profile" // This is the name of the page and must match the url from root
+          options={{
+            drawerLabel: 'Profile',
+            title: 'overview',
+          }}
+        />
         <Drawer.Screen
           name="homepage" // This is the name of the page and must match the url from root
           options={{
@@ -13,13 +20,7 @@ export default function mainAppLayout() {
             title: 'overview',
           }}
         />
-        <Drawer.Screen
-          name="Profile" // This is the name of the page and must match the url from root
-          options={{
-            drawerLabel: 'Profile',
-            title: 'overview',
-          }}
-        />
+       
         <Drawer.Screen
           name="ContentPage" // This is the name of the page and must match the url from root
           options={{
